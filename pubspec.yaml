@@ -14,6 +14,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   # Change Launcher Icon
   flutter_launcher_icons: ^0.13.1
+  # Change Native Splash
+  flutter_native_splash: ^2.4.1
 
 dev_dependencies:
   flutter_test:
