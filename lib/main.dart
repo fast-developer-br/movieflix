@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:movieflix/modules/app_core_module.dart';
+import 'package:movieflix/core/modules/app_core_module.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {

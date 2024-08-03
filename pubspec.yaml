@@ -11,13 +11,22 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Discover network connectivity
+  connectivity_plus: ^6.0.4
+  # Lib Icons
   cupertino_icons: ^1.0.6
+  # HTTP networking package
+  dio: ^5.5.0+1
+  # Compare objects
+  equatable: ^2.0.5
   # Change Launcher Icon
   flutter_launcher_icons: ^0.13.1
   # Modularized routes and Modularized Dependency Injection
   flutter_modular: ^6.3.4
   # Change Native Splash
   flutter_native_splash: ^2.4.1
+  # Dio interceptor that logs network
+  pretty_dio_logger: ^1.4.0
   # Create responsive UI easily
   sizer: ^2.0.15
 
