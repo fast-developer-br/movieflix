@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:movieflix/core/network/http_services.dart';
+import 'package:movieflix/features/home/presentation/widgets/popular/popular_movies_widget.dart';
+import 'package:movieflix/features/home/presentation/widgets/upcoming_carousel/upcoming_carousel_widget.dart';
+import 'package:sizer/sizer.dart';
+
+import 'widgets/top_rated/top_rated_movies_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,15 +14,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  void initState() {
-    super.initState();
-    FlutterNativeSplash.remove();
-    Modular.get<HttpServices>().get(
-        'https://api.themoviedb.org/3/movie/11?api_key=1019e8ecf4e06f155e24735b9f35f3ab');
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return SingleChildScrollView(
+        child: Column(children: [
+      const UpcomingCarouselWidget(),
+      const TopRatedMoviesWidget(),
+      Padding(
+        padding: EdgeInsets.symmetric(vertical: 4.h),
+        child: const PopularMoviesWidget(),
+      )
+    ]));
   }
 }

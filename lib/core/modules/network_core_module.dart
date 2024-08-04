@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:movieflix/core/network/http_interceptors.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../network/http_services.dart';
@@ -25,6 +26,7 @@ class NetworkCoreModule extends Module {
           error: true,
         ));
       }
+      dio.interceptors.add(HttpInterceptors());
       return dio;
     });
   }

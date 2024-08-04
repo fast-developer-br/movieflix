@@ -11,22 +11,34 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # A carousel slider widget.
+  carousel_slider: ^4.2.1
+  # Show images from the internet and keep them in the cache directory.
+  cached_network_image: ^3.4.0
   # Discover network connectivity
   connectivity_plus: ^6.0.4
   # Lib Icons
   cupertino_icons: ^1.0.6
   # HTTP networking package
   dio: ^5.5.0+1
+  # Error handling and railway oriented programming
+  either_dart: ^1.0.0
   # Compare objects
   equatable: ^2.0.5
+  # Bloc state management
+  flutter_bloc: ^8.1.6
   # Change Launcher Icon
   flutter_launcher_icons: ^0.13.1
   # Modularized routes and Modularized Dependency Injection
   flutter_modular: ^6.3.4
   # Change Native Splash
   flutter_native_splash: ^2.4.1
+  # To use fonts from fonts.google.com.
+  google_fonts: ^6.2.1
   # Dio interceptor that logs network
   pretty_dio_logger: ^1.4.0
+  # Loading shimmer effect
+  shimmer: ^3.0.0
   # Create responsive UI easily
   sizer: ^2.0.15
 
@@ -38,3 +50,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/logo/
