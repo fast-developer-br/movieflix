@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:movieflix/core/modules/app_core_module.dart';
+import 'package:movieflix/shared/theme/app_theme.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -16,6 +17,7 @@ void main() {
       child: Sizer(builder: (context, orientation, deviceType) {
         return MaterialApp.router(
             locale: const Locale("pt", "BR"),
-            routerConfig: Modular.routerConfig);
+            routerConfig: Modular.routerConfig,
+            theme: themeData);
       })));
 }
