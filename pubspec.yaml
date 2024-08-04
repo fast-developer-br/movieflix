@@ -25,6 +25,8 @@ dependencies:
   either_dart: ^1.0.0
   # Compare objects
   equatable: ^2.0.5
+  # To initially only show a defined number of lines of a probably long text
+  expandable_richtext: ^1.0.7
   # Bloc state management
   flutter_bloc: ^8.1.6
   # Change Launcher Icon
@@ -35,6 +37,8 @@ dependencies:
   flutter_native_splash: ^2.4.1
   # To use fonts from fonts.google.com.
   google_fonts: ^6.2.1
+  # Provides internationalization and localization facilities
+  intl: ^0.19.0
   # Dio interceptor that logs network
   pretty_dio_logger: ^1.4.0
   # Loading shimmer effect
@@ -54,3 +58,4 @@ flutter:
   assets:
     - assets/
     - assets/logo/
+    - assets/launcher/

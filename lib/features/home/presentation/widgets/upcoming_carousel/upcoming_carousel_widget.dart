@@ -7,6 +7,7 @@ import 'package:movieflix/features/home/presentation/cubits/upcoming/carousel/up
 import 'package:movieflix/shared/colors/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../../core/modules/routes.dart';
 import '../../../../../shared/widgets/images/images_network_widget.dart';
 import '../../../../../shared/widgets/shimmer/shimmer_card.dart';
 import '../../cubits/upcoming/movies/upcoming_movies_cubit.dart';
@@ -51,10 +52,14 @@ class _UpcomingCarouselWidgetState extends State<UpcomingCarouselWidget> {
                       itemBuilder: (context, index, realIndex) {
                         final movie = response.results[index];
 
-                        return ImagesNetworkWidget(
-                            imageUrl:
-                                '${ApiConsts.imageBaseURL}${movie.backdropPath}',
-                            radius: 15);
+                        return InkWell(
+                          onTap: () => Modular.to.pushNamed(
+                              '.${Routes.formatRoute(Routes.details)}',
+                              arguments: {'movie': movie}),
+                          child: ImagesNetworkWidget(
+                              imageUrl: ApiConsts.imageURL(movie.backdropPath),
+                              radius: 15),
+                        );
                       },
                       options: CarouselOptions(
                         autoPlay: true,
