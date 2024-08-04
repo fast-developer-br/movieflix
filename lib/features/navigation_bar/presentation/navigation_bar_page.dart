@@ -48,8 +48,8 @@ class _NavigationBarPageState extends State<NavigationBarPage> {
 
             return BottomNavigationBar(
               items: _items
-                  .map((i) =>
-                      BottomNavigationBarItem(icon: Icon(i.icon), label: ''))
+                  .map((i) => BottomNavigationBarItem(
+                      icon: Icon(i.icon, opticalSize: 10), label: ''))
                   .toList(),
               currentIndex: _activeIndex,
               onTap: (index) {

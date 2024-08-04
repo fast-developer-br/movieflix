@@ -8,7 +8,8 @@ ThemeData themeData = ThemeData(
   appBarTheme: const AppBarTheme(backgroundColor: AppColors.themeDark),
   textTheme: TextTheme(
     titleLarge: GoogleFonts.poppins(color: AppColors.white, fontSize: 18.sp),
-    titleMedium: GoogleFonts.poppins(color: AppColors.white, fontSize: 16.sp),
+    titleMedium: GoogleFonts.poppins(color: AppColors.white, fontSize: 15.sp),
+    titleSmall: GoogleFonts.poppins(color: AppColors.white, fontSize: 13.sp),
     bodyMedium: GoogleFonts.poppins(color: AppColors.white, fontSize: 12.sp),
     bodySmall: GoogleFonts.poppins(color: AppColors.white, fontSize: 10.sp),
   ),

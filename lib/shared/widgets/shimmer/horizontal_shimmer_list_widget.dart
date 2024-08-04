@@ -3,7 +3,8 @@ import 'package:movieflix/shared/widgets/shimmer/shimmer_card.dart';
 import 'package:sizer/sizer.dart';
 
 class HorizontalShimmerListWidget extends StatelessWidget {
-  const HorizontalShimmerListWidget({super.key});
+  final bool isClircle;
+  const HorizontalShimmerListWidget({super.key, this.isClircle = false});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class HorizontalShimmerListWidget extends StatelessWidget {
               index: 1,
               height: 3.h,
               width: 8.w,
+              circle: isClircle,
             ),
           );
         },

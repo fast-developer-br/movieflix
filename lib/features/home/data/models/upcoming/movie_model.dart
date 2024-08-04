@@ -19,7 +19,7 @@ class MovieModel extends MovieEntity {
         overview: json['overview'],
         popularity: json['popularity'],
         posterPath: json['poster_path'],
-        releaseDate: json['release_date'],
+        releaseDate: DateTime.parse(json['release_date']),
         title: json['title'],
         voteAverage: json['vote_average'],
         voteCount: json['vote_count']);

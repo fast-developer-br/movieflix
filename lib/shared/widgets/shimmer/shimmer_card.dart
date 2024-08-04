@@ -6,8 +6,13 @@ class ShimmerCard extends StatelessWidget {
   final int index;
   final double height;
   final double width;
+  final bool circle;
   const ShimmerCard(
-      {super.key, required this.index, required this.height, this.width = 100});
+      {super.key,
+      required this.index,
+      required this.height,
+      this.width = 100,
+      this.circle = false});
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +30,13 @@ class ShimmerCard extends StatelessWidget {
         highlightColor: Colors.white38,
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(8),
-            ),
-            color: colorForIndex(index, context),
-          ),
+              borderRadius: circle
+                  ? null
+                  : const BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+              color: colorForIndex(index, context),
+              shape: circle ? BoxShape.circle : BoxShape.rectangle),
         ),
       ),
     );

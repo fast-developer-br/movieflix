@@ -5,9 +5,12 @@ class ApiConsts {
   String get getApiToken => _apiToken;
 
   static const baseURL = 'https://api.themoviedb.org';
-  static const imageBaseURL = 'http://image.tmdb.org/t/p/w500';
+  static String imageURL(String image) =>
+      'http://image.tmdb.org/t/p/w500$image';
 
   static const listUpcomingMovies = '$baseURL/3/movie/upcoming';
   static const listPopularMovies = '$baseURL/3/movie/popular';
   static const listTopRatedMovies = '$baseURL/3/movie/top_rated';
+
+  static String castMovie(int movieId) => '$baseURL/3/movie/$movieId/credits';
 }

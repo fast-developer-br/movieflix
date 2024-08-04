@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 class ImagesNetworkWidget extends StatelessWidget {
   final String imageUrl;
   final double radius;
+  final bool isCircle;
   const ImagesNetworkWidget(
-      {super.key, required this.imageUrl, this.radius = 0});
+      {super.key,
+      required this.imageUrl,
+      this.radius = 0,
+      this.isCircle = false});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +17,8 @@ class ImagesNetworkWidget extends StatelessWidget {
       imageUrl: imageUrl,
       imageBuilder: (context, imageProvider) => Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius),
+          borderRadius: isCircle ? null : BorderRadius.circular(radius),
+          shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
           image: DecorationImage(
             image: imageProvider,
             fit: BoxFit.fill,

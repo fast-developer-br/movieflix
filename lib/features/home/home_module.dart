@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:movieflix/features/details/details_module.dart';
 import 'package:movieflix/features/home/data/datasources/home_datasource.dart';
 import 'package:movieflix/features/home/data/repositories/home_repository_impl.dart';
 import 'package:movieflix/features/home/domain/repositories/home_repository.dart';
@@ -9,6 +10,7 @@ import 'package:movieflix/features/home/presentation/cubits/upcoming/movies/upco
 import 'package:movieflix/features/home/presentation/home_page.dart';
 
 import '../../core/modules/network_core_module.dart';
+import '../../core/modules/routes.dart';
 import 'domain/usecases/get_popular_movies_usecase.dart';
 import 'presentation/cubits/top_rated/movies/top_rated_movies_cubit.dart';
 import 'presentation/cubits/upcoming/carousel/upcoming_carousel_cubit.dart';
@@ -36,5 +38,6 @@ class HomeModule extends Module {
   void routes(RouteManager r) {
     super.routes(r);
     r.child('/', child: (context) => const HomePage());
+    r.module(Routes.details, module: DetailsModule());
   }
 }

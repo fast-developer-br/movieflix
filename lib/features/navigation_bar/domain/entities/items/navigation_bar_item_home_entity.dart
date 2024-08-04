@@ -9,6 +9,6 @@ class NavigationBarItemHomeEntity extends NavigationBarEntity {
 
   factory NavigationBarItemHomeEntity.instance() {
     return NavigationBarItemHomeEntity(
-        icon: Icons.home, title: 'Home', route: Routes.home);
+        icon: Icons.home_outlined, title: 'Home', route: Routes.home);
   }
 }

@@ -4,7 +4,8 @@ import 'package:sizer/sizer.dart';
 
 class CircularRatingWidget extends StatelessWidget {
   final int rating;
-  const CircularRatingWidget({super.key, required this.rating});
+  final double size;
+  const CircularRatingWidget({super.key, required this.rating, this.size = 4});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +16,17 @@ class CircularRatingWidget extends StatelessWidget {
         child: Stack(
           alignment: AlignmentDirectional.center,
           children: <Widget>[
-            CircularProgressIndicator(
-              strokeWidth: 3,
-              value: rating / 100,
-              valueColor: AlwaysStoppedAnimation<Color>(
-                  AppColors.getRatingColorPrimary(rating)),
-              backgroundColor:
-                  AppColors.getRatingColorPrimary(rating).withOpacity(.2),
+            SizedBox(
+              height: size.h,
+              width: size.h,
+              child: CircularProgressIndicator(
+                strokeWidth: 3,
+                value: rating / 100,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                    AppColors.getRatingColorPrimary(rating)),
+                backgroundColor:
+                    AppColors.getRatingColorPrimary(rating).withOpacity(.2),
+              ),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
