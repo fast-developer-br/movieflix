@@ -1,4 +1,5 @@
 import 'package:either_dart/either.dart';
+import 'package:movieflix/core/errors/exceptions.dart';
 import 'package:movieflix/core/errors/failures.dart';
 import 'package:movieflix/features/home/domain/entities/movie/response_movie_entity.dart';
 import 'package:movieflix/features/search/data/datasources/search_datasource.dart';
@@ -13,8 +14,8 @@ class ISearchRepository implements SearchRepository {
       {required String search}) async {
     try {
       return Right(await datasource.searchMovie(search: search));
-    } catch (_) {
-      return Left(const ServerFailure());
+    } on ServerException {
+      return const Left(ServerFailure());
     }
   }
 }

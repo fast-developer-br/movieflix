@@ -1,3 +1,4 @@
+import 'package:movieflix/core/errors/exceptions.dart';
 import 'package:movieflix/core/network/http_services.dart';
 
 import '../../../../core/network/api_consts.dart';
@@ -17,12 +18,11 @@ class IDetailsDataSource implements DetailsDatasource {
       final response = await client.get(ApiConsts.castMovie(movieId),
           queryParameters: {'language': 'pt-BR'});
       if (response.statusCode == 200) {
-        final a = ResponseCastModel.fromJson(response.data);
-        return a;
+        return ResponseCastModel.fromJson(response.data);
       }
-      throw Exception();
+      throw const ServerException();
     } catch (_) {
-      throw Exception();
+      rethrow;
     }
   }
 }

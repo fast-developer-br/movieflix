@@ -1,3 +1,4 @@
+import 'package:movieflix/core/errors/exceptions.dart';
 import 'package:movieflix/core/network/http_services.dart';
 
 import '../../../../core/network/api_consts.dart';
@@ -19,9 +20,9 @@ class ISearchDataSource implements SearchDataSource {
       if (response.statusCode == 200) {
         return ResponseMovieModel.fromJson(response.data);
       }
-      throw Exception();
+      throw const ServerException();
     } catch (_) {
-      throw Exception();
+      rethrow;
     }
   }
 }
