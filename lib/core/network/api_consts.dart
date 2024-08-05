@@ -11,6 +11,7 @@ class ApiConsts {
   static const listUpcomingMovies = '$baseURL/3/movie/upcoming';
   static const listPopularMovies = '$baseURL/3/movie/popular';
   static const listTopRatedMovies = '$baseURL/3/movie/top_rated';
+  static const searchMovie = '$baseURL/3/search/movie';
 
   static String castMovie(int movieId) => '$baseURL/3/movie/$movieId/credits';
 }
