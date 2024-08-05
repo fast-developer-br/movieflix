@@ -1,4 +1,5 @@
 import 'package:either_dart/either.dart';
+import 'package:movieflix/core/errors/exceptions.dart';
 import 'package:movieflix/core/errors/failures.dart';
 import 'package:movieflix/features/home/data/datasources/home_datasource.dart';
 
@@ -14,8 +15,8 @@ class IHomeRespository implements HomeRepository {
   Future<Either<Failure, ResponseMovieEntity>> getUpcomingMovies() async {
     try {
       return Right(await datasource.getUpcomingMovies());
-    } catch (_) {
-      return Left(const ServerFailure());
+    } on ServerException {
+      return const Left(ServerFailure());
     }
   }
 
@@ -23,8 +24,8 @@ class IHomeRespository implements HomeRepository {
   Future<Either<Failure, ResponseMovieEntity>> getPopularMovies() async {
     try {
       return Right(await datasource.getPopularMovies());
-    } catch (_) {
-      return Left(const ServerFailure());
+    } on ServerException {
+      return const Left(ServerFailure());
     }
   }
 
@@ -32,8 +33,8 @@ class IHomeRespository implements HomeRepository {
   Future<Either<Failure, ResponseMovieEntity>> getTopRatedMovies() async {
     try {
       return Right(await datasource.getTopRatedMovies());
-    } catch (_) {
-      return Left(const ServerFailure());
+    } on ServerException {
+      return const Left(ServerFailure());
     }
   }
 }

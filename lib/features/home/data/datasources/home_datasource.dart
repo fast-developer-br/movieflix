@@ -1,3 +1,4 @@
+import 'package:movieflix/core/errors/exceptions.dart';
 import 'package:movieflix/core/network/api_consts.dart';
 
 import '../../../../core/network/http_services.dart';
@@ -21,9 +22,9 @@ class IHomeDataSource implements HomeDatasource {
       if (response.statusCode == 200) {
         return ResponseMovieModel.fromJson(response.data);
       }
-      throw Exception();
+      throw const ServerException();
     } catch (_) {
-      throw Exception();
+      rethrow;
     }
   }
 
@@ -35,9 +36,9 @@ class IHomeDataSource implements HomeDatasource {
       if (response.statusCode == 200) {
         return ResponseMovieModel.fromJson(response.data);
       }
-      throw Exception();
+      throw const ServerException();
     } catch (_) {
-      throw Exception();
+      rethrow;
     }
   }
 
@@ -49,9 +50,9 @@ class IHomeDataSource implements HomeDatasource {
       if (response.statusCode == 200) {
         return ResponseMovieModel.fromJson(response.data);
       }
-      throw Exception();
+      throw const ServerException();
     } catch (_) {
-      throw Exception();
+      rethrow;
     }
   }
 }
